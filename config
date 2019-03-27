@@ -1,0 +1,20 @@
+## Host shortcut - replicate below lines for each host
+## ---------------------------------------------------
+
+Host <alias-name>
+  HostName <server.domain.com>/<ipaddress>
+  Port <portnumber>  # Option is not mandatory, only used when needed to be connected to a specific on the remote host
+  User <username>
+  IdentityFile <path to private key file>
+  LocalForward [<bind address>:]<local port> <host>:<remote port>  # Used only whennlocal output needs to be streamed to remote securely
+  RemoteForward [<bind address>:]<port> [<host>:<remote port>] 
+
+## Options for Hosts
+## -----------------
+
+Host * / Host <alias-name>  # * - Options applicable for any host / <alias-name> - applicable only to the host specified
+  ServerAliveInterval <seconds>  
+  LogLevel <QUIET/FATAL/ERROR/INFO/VERBOSE/DEBUG/DEBUG1/DEBUG2/DEBUG3>  
+  StrictHostKeyChecking <no/yes>  
+  VisualHostKey <yes/no>
+  PasswordAuthentication <yes/no> 
